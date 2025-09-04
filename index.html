@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Almento de taxa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #sim {
+      background-color: #007bff;
+      color: white;
+    }
+
+    #nao {
+      background-color: #ff4c4c;
+      color: white;
+      position: absolute;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .brilho {
+      color: #039ca7;
+      text-shadow:
+        0 0 5px #ffeb3b,
+        0 0 10px #ffeb3b,
+        0 0 20px #ffeb3b,
+        0 0 40px #ff9800,
+        0 0 80px #ff9800;
+      animation: neon 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes neon {
+      from {
+        text-shadow:
+          0 0 5px #ffeb3b,
+          0 0 10px #ffeb3b,
+          0 0 20px #ffeb3b,
+          0 0 40px #ff9800,
+          0 0 80px #ff9800;
+      }
+      to {
+        text-shadow:
+          0 0 10px #fff176,
+          0 0 20px #fff176,
+          0 0 30px #fff176,
+          0 0 50px #ffb74d,
+          0 0 100px #ffb74d;
+      }
+    }
+
+    ol {
+      margin-top: 15px;
+      text-align: left;
+      display: inline-block;
+      font-size: 1.2em;
+    }
+
+    .beneficios {
+      margin-top: 15px;
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    body {
+     background-color: #fff176;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://i.pinimg.com/736x/75/65/2a/75652a46880657e4bdfbd4a0092ab7ee.jpg" alt="Urso pedinte do Pica-Pau"> 
+  <h1>Me dê um aumento ae</h1>
+  
+  <button id="sim">Sim</button>
+  <button id="nao">Não</button>
+
+  <div id="mensagem"></div>
+
+  <script>
+    const simBtn = document.getElementById('sim');
+    const naoBtn = document.getElementById('nao');
+    const mensagem = document.getElementById('mensagem');
+
+    // Posicionar botão "Não" inicialmente no centro
+    naoBtn.style.top = '50%';
+    naoBtn.style.left = '60%';
+
+    // Botão "Não" foge do mouse
+    naoBtn.addEventListener('mouseover', () => {
+      const maxX = window.innerWidth - naoBtn.offsetWidth;
+      const maxY = window.innerHeight - naoBtn.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      naoBtn.style.top = randomY + 'px';
+      naoBtn.style.left = randomX + 'px';
+    });
+
+    // Se clicar no "Não"
+    naoBtn.addEventListener('click', () => {
+      mensagem.innerHTML = `<div class="brilho">Poxa, não quer mesmo mesmo ajudar o coleguinha 😅</div>`;
+      naoBtn.style.display = 'none'; // opcional: esconde o botão depois
+    });
+
+    // Botão "Sim"
+    simBtn.addEventListener('click', () => {
+      mensagem.innerHTML = `
+        <div class="brilho">Obrigado!</div>
+        <div class="beneficios">Benefícios melhorados:</div>
+        <ol>
+          <li>correr em dias de chuvas</li>
+          <li>nao virar o pedido do cliente</li>
+          <li>Vontade de trabalhar</li>
+          <li>10mn adiantado</li>
+          <li>Sem atestados (ou faltas)</li>
+          <li>Sem reclamações</li>
+        </ol>
+      `;
+    });
+  </script>
+
+</body>
+</html>
