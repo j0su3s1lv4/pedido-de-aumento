@@ -10,7 +10,7 @@
       text-align: center;
       margin-top: 50px;
       background-color: #f0f0f0;
-      overflow: hidden;
+      overflow: auto;  /*aqui faz rolar a telaaaaaaaaaaaaaaaaa*/
     }
 
     img {
@@ -135,8 +135,8 @@
 
     // Se clicar no "Não"
     naoBtn.addEventListener('click', () => {
-      mensagem.innerHTML = `<div class="brilho">Poxa, não quer mesmo mesmo ajudar o coleguinha 😅</div>`;
-      naoBtn.style.display = 'none'; // opcional: esconde o botão depois
+      mensagem.innerHTML = `<div class="brilho">Poxa, não quer mesmo ajudar um humilde motoboy 😅</div>`;
+      naoBtn.style.display = 'none'; // opcional: esconde o botão depois que roda a parte que aperta
     });
 
     // Botão "Sim"
@@ -147,7 +147,7 @@
         <ol>
           <li>correr em dias de chuvas</li>
           <li>nao virar o pedido do cliente</li>
-          <li>Vontade de trabalhar</li>
+          <li>Vontade de trabalhar 70%</li>
           <li>10mn adiantado</li>
           <li>Sem atestados (ou faltas)</li>
           <li>Sem reclamações</li>
